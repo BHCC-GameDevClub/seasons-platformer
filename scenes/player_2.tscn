@@ -90,7 +90,9 @@ animations = [{
 "speed": 11.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_f08es"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mlmo4"]
+radius = 4.0
+height = 20.0
 
 [node name="player2" type="CharacterBody2D"]
 script = ExtResource("1_mons8")
@@ -99,6 +101,10 @@ script = ExtResource("1_mons8")
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_oo7a5")
 animation = &"idle-wizard"
+autoplay = "idle-wizard"
+frame = 3
+frame_progress = 0.565891
 
 [node name="wizardCollisionShape" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_f08es")
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_mlmo4")
