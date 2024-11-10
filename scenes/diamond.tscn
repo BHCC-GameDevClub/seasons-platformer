@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpfboepgl0fqn"]
+
+[ext_resource type="Texture2D" uid="uid://68vc1gjxytlu" path="res://assets/Collectables/Collectables_Pack.png" id="1_3o17a"]
+[ext_resource type="Script" path="res://scripts/dimond.gd" id="1_leqbv"]
+
+[node name="diamond" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_leqbv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0.1, 0)
+scale = Vector2(0.991071, 1)
+polygon = PackedVector2Array(-5, -5, 5, -5, 7, -3, 7, -1, 1, 5, -1, 5, -7.16396, 0, -7.16396, -3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.886)
+texture = ExtResource("1_3o17a")
+region_enabled = true
+region_rect = Rect2(16, 50, 16, 13)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
